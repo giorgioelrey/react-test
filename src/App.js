@@ -1,28 +1,31 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
 import './App.css';
+import ListaFilm from './ListaFilm';
 
 class App extends Component {
+
   render() {
+
+    console.log('sto renderizzando il componente');
+    console.log(this.props);
+
     return (
       <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <p>
-            Edit <code>src/App.js</code> and save to reload.
-          </p>
-          <a
-            className="App-link"
-            href="https://reactjs.org"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Learn React
-          </a>
-        </header>
+        <h1>Ciao {this.props.name}</h1>
+
+        <p>Stiamo studiando {this.props.materia}</p>
+
+        <ListaFilm />
+
       </div>
     );
   }
+}
+
+//un placeholder di dati
+App.defaultProps = {
+  name: 'Giorgio',
+  materia: 'React'
 }
 
 export default App;
